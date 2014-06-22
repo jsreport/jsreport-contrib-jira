@@ -1,0 +1,30 @@
+{
+  "name": "jsreport-contrib-jira",
+  "version": "0.0.0",
+  "description": "Allowing to use jira npm module inside scripts extension.",
+  "main": "jsreport.config.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jsreport/jsreport-contrib-jira.git"
+  },
+  "keywords": [
+    "jsreport",
+    "jira"
+  ],
+  "author": "Jan Blaha",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jsreport/jsreport-contrib-jira/issues"
+  },
+  "homepage": "https://github.com/jsreport/jsreport-contrib-jira",
+  "dependencies": {
+    "jira": "^0.10.0"
+  },
+  "devDependencies": {
+    "mocha": "^1.20.1",
+    "q": "^1.0.1"
+  }
+}
