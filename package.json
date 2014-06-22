@@ -24,6 +24,7 @@
     "jira": "^0.10.0"
   },
   "devDependencies": {
+    "jsreport": "jsreport/jsreport",
     "mocha": "^1.20.1",
     "q": "^1.0.1"
   }

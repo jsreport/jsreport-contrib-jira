@@ -1,5 +1,7 @@
 # jsreport-contrib-jira
 
+[![Build Status](https://travis-ci.org/jsreport/jsreport-contrib-jira.png?branch=master)](https://travis-ci.org/jsreport/jsreport-contrib-jira)
+
 > [jsreport](https://github.com/jsreport/jsreport) extension allowing to work with [jira npm module](https://github.com/steves/node-jira) inside jsreport [custom scripts](http://jsreport.net/learn/scripts).
 
 This extension is pre-installed in jsreport [playground](http://jsreport.net/playground) and [online](http://jsreport.net/online) versions. You may install this extension to jsreport [on-prem](http://jsreport.net/on-prem) by:
