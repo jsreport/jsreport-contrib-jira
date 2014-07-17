@@ -19,7 +19,7 @@ JiraApi = require('jira').JiraApi;
 var jira = new JiraApi('https', '[subdomain].atlassian.net', 443, 'username', 'password', '2');
 
 jira.getUsersIssues('pofider', true, function(err, res) {
-    request.data = { issues : res};
+    request.data = res;
     done();    
 });
 ```
