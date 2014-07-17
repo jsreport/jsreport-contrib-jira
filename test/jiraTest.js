@@ -20,7 +20,7 @@ describeReporting(path.join(__dirname, "../"), ["templates", "scripts", "jsrepor
         function prepareRequest(scriptContent) {
             return prepareTemplate(scriptContent).then(function(template) {
                 return q({
-                    request: { template: template, context: reporter.context },
+                    request: { template: template, context: reporter.context, reporter: reporter },
                     response: {}
                 });
             });
