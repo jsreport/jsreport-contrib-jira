@@ -1,6 +1,6 @@
 {
   "name": "jsreport-contrib-jira",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Allowing to use jira npm module inside scripts extension.",
   "main": "jsreport.config.js",
   "scripts": {
