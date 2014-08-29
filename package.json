@@ -1,6 +1,6 @@
 {
   "name": "jsreport-contrib-jira",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Allowing to use jira npm module inside scripts extension.",
   "main": "jsreport.config.js",
   "scripts": {
@@ -27,5 +27,6 @@
     "jsreport": "jsreport/jsreport",
     "mocha": "^1.20.1",
     "q": "^1.0.1"
-  }
+  },
+  "readme": "# jsreport-contrib-jira\n\n[![Build Status](https://travis-ci.org/jsreport/jsreport-contrib-jira.png?branch=master)](https://travis-ci.org/jsreport/jsreport-contrib-jira)\n\n> [jsreport](https://github.com/jsreport/jsreport) extension allowing to work with [jira npm module](https://github.com/steves/node-jira) inside jsreport [custom scripts](http://jsreport.net/learn/scripts).\n\nThis extension is pre-installed in jsreport [online](http://jsreport.net/online) version. You may install this extension to jsreport [on-prem](http://jsreport.net/on-prem) by:\n```\nnpm install jsreport-contrib-jira\n```\n\n##Example\nOnce is `jsreport-contrib-jira` extension running you can use `require('jira')` inside your custom scripts.\n\nSimple example of getting jira issues for particular user.\n\n```javascript\nJiraApi = require('jira').JiraApi;\nvar jira = new JiraApi('https', '[subdomain].atlassian.net', 443, 'username', 'password', '2');\n\njira.getUsersIssues('pofider', true, function(err, res) {\n    request.data = res;\n    done();    \n});\n```\n\nAnd then display the issues using `jsrender`\n```html\n{{for issues}}\n    <h3>\n        <img src='{{:#data.fields.status.iconUrl}}' /> \n        {{:#data.key}} - \n        {{:#data.fields.summary}}\n    </h3>\n    <p>\n        {{>#data.fields.description}}\n    </p>\n{{/for}}\n```\n\nFor full set of jira api features see [node-jira documentation](https://github.com/steves/node-jira).\n\n##License\nThe MIT License (MIT)\n\nCopyright (c) 2014 jsreport\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
 }
