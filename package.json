@@ -1,6 +1,6 @@
 {
   "name": "jsreport-contrib-jira",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Allowing to use jira npm module inside scripts extension.",
   "main": "jsreport.config.js",
   "scripts": {
@@ -27,6 +27,5 @@
     "jsreport": "jsreport/jsreport",
     "mocha": "^1.20.1",
     "q": "^1.0.1"
-  },
-  "readme": "# jsreport-contrib-jira\n\n[![Build Status](https:\x2F\x2Ftravis-ci.org\x2Fjsreport\x2Fjsreport-contrib-jira.png?branch=master)](https:\x2F\x2Ftravis-ci.org\x2Fjsreport\x2Fjsreport-contrib-jira)\n\n\x3E [jsreport](https:\x2F\x2Fgithub.com\x2Fjsreport\x2Fjsreport) extension allowing to work with [jira npm module](https:\x2F\x2Fgithub.com\x2Fsteves\x2Fnode-jira) inside jsreport [custom scripts](http:\x2F\x2Fjsreport.net\x2Flearn\x2Fscripts).\n\nThis extension is pre-installed in jsreport [online](http:\x2F\x2Fjsreport.net\x2Fonline) version. You may install this extension to jsreport [on-prem](http:\x2F\x2Fjsreport.net\x2Fon-prem) by:\n```\nnpm install jsreport-contrib-jira\n```\n\n##Example\nOnce is `jsreport-contrib-jira` extension running you can use `require(\'jira\')` inside your custom scripts.\n\nSimple example of getting jira issues for particular user.\n\n```javascript\nJiraApi = require(\'jira\').JiraApi;\nvar jira = new JiraApi(\'https\', \'[subdomain].atlassian.net\', 443, \'username\', \'password\', \'2\');\n\njira.getUsersIssues(\'pofider\', true, function(err, res) {\n    request.data = res;\n    done();    \n});\n```\n\nAnd then display the issues using `jsrender`\n```html\n{{for issues}}\n    \x3Ch3\x3E\n        \x3Cimg src=\'{{:#data.fields.status.iconUrl}}\' \x2F\x3E \n        {{:#data.key}} - \n        {{:#data.fields.summary}}\n    \x3C\x2Fh3\x3E\n    \x3Cp\x3E\n        {{\x3E#data.fields.description}}\n    \x3C\x2Fp\x3E\n{{\x2Ffor}}\n```\n\nFor full set of jira api features see [node-jira documentation](https:\x2F\x2Fgithub.com\x2Fsteves\x2Fnode-jira).\n\n##License\nThe MIT License (MIT)\n\nCopyright (c) 2014 jsreport\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and\x2For sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
+  }
 }
